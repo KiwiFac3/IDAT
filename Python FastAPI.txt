@@ -1,0 +1,4 @@
+Python FastAPI:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+env\Scripts\activate
+uvicorn main:app --reload
