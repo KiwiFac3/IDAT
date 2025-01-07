@@ -17,6 +17,27 @@ dummy_data = {
     ]
 }
 
+budget_data = {
+  "income": [
+    {"description": "Job Salary", "amount": 4000},
+    {"description": "Freelance Work", "amount": 1200},
+    {"description": "Investments", "amount": 800}
+  ],
+  "expenses": [
+    {"category": "Rent", "amount": 1500},
+    {"category": "Utilities", "amount": 300},
+    {"category": "Groceries", "amount": 800},
+    {"category": "Transportation", "amount": 200},
+    {"category": "Entertainment", "amount": 500},
+    {"category": "Subscriptions", "amount": 100},
+    {"category": "Insurance", "amount": 400},
+    {"category": "Healthcare", "amount": 300},
+    {"category": "Education", "amount": 600},
+    {"category": "Travel", "amount": 1000}
+  ]
+}
+
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -33,6 +54,10 @@ async def root():
 @app.get("/data")
 async def get_data():
     return dummy_data
+
+@app.get("/budget")
+async def get_data():
+    return budget_data
 
 @app.get("/data/filter")
 async def filter_data(name: str):
